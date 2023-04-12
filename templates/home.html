@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+    <title>College Predictor System</title>
+</head>
+<body style="background-image:url(https://source.unsplash.com/1000x800/?college,students,4k,realistic,colorful);
+      background-color: rgba(0, 0, 0, 0.8);
+      background-position: center;
+      background-size: cover;
+      overflow-x: hidden;
+      position: relative;
+      background-blend-mode: darken;">  
+
+    <div class="container">
+        <h1 class="text-center mt-4" style="color: white; font-weight: 700; font-family: Verdana;">College Predictor System</h1>
+
+        <p class="text-center  pt-3" style="color: rgb(5, 255, 242); font-weight: 500; "><span style="color: rgb(238, 19, 19); font-weight: 700;">Quota : </span> All-India - 0, Home-State - 3, Other-State - 6, Andhra Pradesh - 1, Goa - 2, Jammu & Kashmir - 4, Ladakh - 5</p>
+        <p class="text-center" style="color: rgb(5, 255, 242); font-weight: 500;"><span style="color: rgb(238, 19, 19); font-weight: 700;">Category : </span> General - 0, Other Backward Classes-Non Creamy Layer - 4, Scheduled Castes - 6, Scheduled Tribes - 8, 
+            General & Persons with Disabilities - 3Other Backward Classes & Persons with Disabilities - 5, 
+            Scheduled Castes & Persons with Disabilities - 7, Scheduled Tribes & Persons with Disabilities - 9, 
+            General & Economically Weaker Section - 1, General & Economically Weaker Section & Persons with Disability - 2</p>
+        <div class="container text-center text-center pt-3">
+            
+                <form action="{{url_for('predict')}}"method="POST">
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control form-control-sm" type="text" name="Institute" placeholder="Type of Institute : IIT or NIT" required="required"/>
+                            <input class="form-control form-control-sm mt-3" type="text" name="Quota" placeholder="Quota" required="required"/>
+                            <input class="form-control form-control-sm mt-3" type="text" name="Category" placeholder="Category" required="required"/>
+                            <input class="form-control form-control-sm mt-3" type="text" name="Closing" placeholder="Your Closing jee score" required="required"/>                        
+                        </div>
+                        <div class="col">
+                            <input class="form-control form-control-sm" type="text" name="Round" placeholder="Round number : 1, 2, 6, 7" required="required"/>
+                            <input class="form-control form-control-sm mt-3" type="text" name="Pool" placeholder="Gender-Neutral : 0, Female-only : 1" required="required"/>
+                            <input class="form-control form-control-sm mt-3" type="text" name="Opening" placeholder="Your opening jee score" required="required"/>
+                        </div>
+                    </div>
+                    <button type="submit" style="width: 100%; font-family: Verdana; font-weight: 700;" class="btn btn-danger mt-5">Tap to Predict</button>
+                </form>
+                <br>
+                <br>
+                <h4 style="color: yellow;">{{prediction_text}}</h4>
+                <h5 class="pt-2" style="color: white;">{{prediction}}</h5>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+     crossorigin="anonymous"></script>
+</body>
+</html>
