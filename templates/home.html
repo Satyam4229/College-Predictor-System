@@ -1,57 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
-    crossorigin="anonymous">
-    <title>College Predictor System</title>
-</head>
-<body style="background-image:url(https://source.unsplash.com/1000x800/?college,students,4k,realistic,colorful);
-      background-color: rgba(0, 0, 0, 0.8);
-      background-position: center;
-      background-size: cover;
-      overflow-x: hidden;
-      position: relative;
-      background-blend-mode: darken;">  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.03JzQpcFTF1ZcPYIq7N17gHaHa?pid=ImgDet&rs=1">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>College Predictor | Home</title>
+  </head>
+  <style>
+    .college:hover{
+      color: red;
+    }
+  </style>
+  <body>
 
-    <div class="container">
-        <h1 class="text-center mt-4" style="color: white; font-weight: 700; font-family: Verdana;">College Predictor System</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://th.bing.com/th/id/OIP.03JzQpcFTF1ZcPYIq7N17gHaHa?pid=ImgDet&rs=1"
+            alt="Bootstrap"
+            width="50"
+            height="50"
+          />
+          <h8 class="ps-2" style="font-weight: 700; font-family: Tahoma; font-size: 1.5rem;">College Predictor</h8>
+        </a>
+        <button
+          class="navbar-toggler bg-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
+            <li class="nav-item">
+              <a
+                class="nav-link active pe-4"
+                aria-current="page"
+                href="/"
+                style="font-size: 20px;"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle pe-4"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="font-size: 20px;"
+              >
+                Topics
+              </a>
+              <ul class="dropdown-menu dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item d-flex align-items-center gap-2 py-2"
+                    href="technology.html"
+                    ><span
+                      class="d-inline-block bg-danger rounded-circle p-1"
+                    ></span>
+                    Technology</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item d-flex align-items-center gap-2 py-2"
+                    href="Coding_Skills.html"
+                    ><span
+                      class="d-inline-block bg-primary rounded-circle p-1"
+                    ></span>
+                    Coding Skills</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item d-flex align-items-center gap-2 py-2"
+                    href="#"
+                    ><span
+                      class="d-inline-block bg-warning rounded-circle p-1"
+                    ></span>
+                    Support Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item d-flex align-items-center gap-2 py-2"
+                    href="#"
+                    ><span
+                      class="d-inline-block bg-success rounded-circle p-1"
+                    ></span>
+                    FAQs</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pe-4" href="/about" style="font-size: 20px;"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact" style="font-size: 20px;"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              type="button"
+              class="btn"
+              style="background-color: rgb(0, 115, 247); color: white; font-size: 20px; font-weight: 600;"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
-        <p class="text-center  pt-3" style="color: rgb(5, 255, 242); font-weight: 500; "><span style="color: rgb(238, 19, 19); font-weight: 700;">Quota : </span> All-India - 0, Home-State - 3, Other-State - 6, Andhra Pradesh - 1, Goa - 2, Jammu & Kashmir - 4, Ladakh - 5</p>
-        <p class="text-center" style="color: rgb(5, 255, 242); font-weight: 500;"><span style="color: rgb(238, 19, 19); font-weight: 700;">Category : </span> General - 0, Other Backward Classes-Non Creamy Layer - 4, Scheduled Castes - 6, Scheduled Tribes - 8, 
-            General & Persons with Disabilities - 3Other Backward Classes & Persons with Disabilities - 5, 
-            Scheduled Castes & Persons with Disabilities - 7, Scheduled Tribes & Persons with Disabilities - 9, 
-            General & Economically Weaker Section - 1, General & Economically Weaker Section & Persons with Disability - 2</p>
-        <div class="container text-center text-center pt-3">
-            
-                <form action="{{url_for('predict')}}"method="POST">
-                    <div class="row">
-                        <div class="col">
-                            <input class="form-control form-control-sm" type="text" name="Institute" placeholder="Type of Institute : IIT - 0,  NIT - 1" required="required"/>
-                            <input class="form-control form-control-sm mt-3" type="text" name="Quota" placeholder="Quota" required="required"/>
-                            <input class="form-control form-control-sm mt-3" type="text" name="Category" placeholder="Category" required="required"/>
-                            <input class="form-control form-control-sm mt-3" type="text" name="Closing" placeholder="Your Closing jee score" required="required"/>                        
+    <!-- Corousel -->
+
+    <div
+      id="carouselExampleFade"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://images.unsplash.com/photo-1667886303255-e36da7907bf0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29sbGVnZSxzdHVkZW50fHx8fHx8MTY4NTgwNjQ3MQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200"
+            class="d-block w-100"
+            alt="coding picture"
+            height="400px"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="font-size: 30px; font-weight: 500;">Welcome To College Predictor</h4>
+            <p style="font-size: 20px; font-weight: 500;">Predict your college, enhance your skills and achieve your goals</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29sbGVnZSxzdHVkZW50LGdyYWR1YXRlfHx8fHx8MTY4NTgwNTkwOQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1000"
+            class="d-block w-100"
+            alt="coding picture"
+            height="400px"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="font-size: 30px; font-weight: 500;">The first ever website</h4>
+            <p style="font-size: 20px; font-weight: 500;">To predict, check out and get admission to your dream college</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.unsplash.com/photo-1650211233820-51539e433ebd?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29sbGVnZSxzdHVkZW50fHx8fHx8MTY4NTgwNzcwMQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200"
+            class="d-block w-100"
+            alt="coding picture"
+            height="400px"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="font-size: 30px; font-weight: 500;">An Award Winning Website</h4>
+            <p style="font-size: 20px; font-weight: 500;"> To support student, give them a way and for a change in society</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="row g-5 mx-5 mt-3">
+        <div class="col-md-8">
+            <article class="blog-post">
+                <h2 class="blog-post-title mb-1">College Predictor System</h2>
+                <p class="blog-post-meta">October 09, 2023 by <a href="https://www.linkedin.com/in/satyam-pandey-2b05741ba/">Satyam Pandey</a></p>
+    
+                <p>This the project of the Data Science where we predict the collegese for the student after their 
+                    marks by the model. The model is based on the report of the various NIT and IIT colleges and 
+                    their admission procedure.
+
+                    <br><br>
+
+                    First, we analyze the data of the different colleges and their stat for admission in various 
+                    programs, then the model suggest the student top colleges as per their features to get admission 
+                    in it.</p>
+                <hr>
+                <div class="container">
+                    <h3
+                      class="text-center mt-3"
+                      style="ffont-family: Verdana"
+                    >
+                      College Predictor System Software
+                    </h3>
+              
+                    <p
+                      class="pt-3"
+                      style="color: rgb(0, 115, 247); font-weight: 500;"
+                    >
+                      <span style="color: rgb(238, 19, 19); font-weight: 700">Quota : </span>
+                      All-India - 0, Home-State - 3, Other-State - 6, Andhra Pradesh - 1, Goa
+                      - 2, Jammu & Kashmir - 4, Ladakh - 5
+                    </p>
+                    <p style="color: rgb(0, 115, 247); font-weight: 500;">
+                      <span style="color: rgb(238, 19, 19); font-weight: 700"
+                        >Category :
+                      </span>
+                      General - 0, Other Backward Classes-Non Creamy Layer - 4, Scheduled
+                      Castes - 6, Scheduled Tribes - 8, General & Persons with Disabilities -
+                      3, Other Backward Classes & Persons with Disabilities - 5, Scheduled
+                      Castes & Persons with Disabilities - 7, Scheduled Tribes & Persons with
+                      Disabilities - 9, General & Economically Weaker Section - 1, General &
+                      Economically Weaker Section & Persons with Disability - 2
+                    </p>
+                    <div class="container text-center text-center pt-3">
+                      <form action="{{url_for('predict')}}" method="POST" style="background-color: rgb(169, 236, 106);  box-shadow: 0  0 1rem  #bbb8b8; border-radius: 8px;">
+                        <div class="row ms-2 me-2">
+                          <div class="col">
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Name"
+                              placeholder="Type your name"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Institute"
+                              placeholder="Type of Institute : IIT - 0,  NIT - 1"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Quota"
+                              placeholder="Quota"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Category"
+                              placeholder="Category"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Closing"
+                              placeholder="Your Closing jee score"
+                              required="required"
+                            />
+                          </div>
+                          <div class="col">
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="School"
+                              placeholder="Your school name"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Round"
+                              placeholder="Round number : 1, 2, 6, 7"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Pool"
+                              placeholder="Gender-Neutral : 0, Female-only : 1"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Opening"
+                              placeholder="Your opening jee score"
+                              required="required"
+                            />
+                            <input
+                              class="form-control form-control-sm mt-3"
+                              type="text"
+                              name="Opinion"
+                              placeholder="Would you like our website"
+                              required="required"
+                            />
+                          </div>
                         </div>
-                        <div class="col">
-                            <input class="form-control form-control-sm" type="text" name="Round" placeholder="Round number : 1, 2, 6, 7" required="required"/>
-                            <input class="form-control form-control-sm mt-3" type="text" name="Pool" placeholder="Gender-Neutral : 0, Female-only : 1" required="required"/>
-                            <input class="form-control form-control-sm mt-3" type="text" name="Opening" placeholder="Your opening jee score" required="required"/>
-                        </div>
+                        <button
+                          type="submit"
+                          style="font-weight: 700; "
+                          class="btn mt-4 mb-3 btn-primary"
+                        >
+                          Tap to Predict
+                        </button>
+                      </form>
+                      <br />
+                      <br />
                     </div>
-                    <button type="submit" style="width: 100%; font-family: Verdana; font-weight: 700;" class="btn btn-danger mt-5">Tap to Predict</button>
-                </form>
-                <br>
-                <br>
-                <h4 style="color: yellow;">{{prediction_text}}</h4>
-                <h5 class="pt-2" style="color: white;">{{prediction}}</h5>
+                    <h5 class="text-center" style="color: rgb(255, 38, 0); font-weight: 700; font-size: 1.4rem;">{{prediction_text}}</h5>
+                    <p class="pt-2 text-center" style="color: rgb(23, 7, 255); font-size: 1.2rem; font-weight: 600;">{{prediction}}</p>
+                  </div>
+    
+                <nav class="blog-pagination my-4" aria-label="Pagination">
+                    <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+                    <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+                </nav>
+    
+        </div>
+    
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">The college predictor system is a Python-based application that utilizes a 
+                        machine learning model to predict colleges and their corresponding degree programs and 
+                        branches based on a student's JEE (Joint Entrance Examination) score.
+                    </p>
+                </div>
+    
+                <div class="p-4">
+                    <h4 class="fst-italic">Top 10 Colleges In India</h4>
+                    <ol class="list-unstyled mb-0" style="text-decoration: none;">
+                        <li><a href="https://www.iitb.ac.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Bombay</a></li>
+                        <li><a href="https://iisc.ac.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Science  Bengaluru</a></li>
+                        <li><a href="https://home.iitd.ac.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Delhi</a></li>
+                        <li><a href="https://www.iitm.ac.in/403?r=2" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Madras</a></li>
+                        <li><a href="http://www.iitkgp.ac.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Kharagpur</a></li>
+                        <li><a href="https://www.iitk.ac.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Kanpur</a></li>
+                        <li><a href="https://www.du.ac.in/" target="_blank" style="text-decoration: none;" class="college">University of Delhi</a></li>
+                        <li><a href="https://uohyd.ac.in/" target="_blank" style="text-decoration: none;" class="college">University of Hyderabad</a></li>
+                        <li><a href="http://itrroorkee.edu.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Roorkee</a></li>
+                        <li><a href="https://www.iitg.ac.in/" target="_blank" style="text-decoration: none;" class="college">Indian Institute of Technology, Guwahati</a></li>
+                    </ol>
+                </div>
+    
+                <div class="p-4">
+                    <h4 class="fst-italic">You can also find us on :</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://github.com/Satyam4229">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/satyam-pandey-2b05741ba/">linkedin</a></li>
+                        <li><a href="https://studentshub4229.wordpress.com/">Students Hub</a></li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
+
+  <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-body-secondary">© 2023 College Predictor, Inc</p>
+
+    <img
+            src="https://th.bing.com/th/id/OIP.03JzQpcFTF1ZcPYIq7N17gHaHa?pid=ImgDet&rs=1"
+            alt="Bootstrap"
+            width="50"
+            height="50"
+          />
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Colleges</a></li>
+      <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li class="nav-item"><a href="/contact" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+    </ul>
+  </footer>
+</div>
+
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
-     crossorigin="anonymous"></script>
-</body>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

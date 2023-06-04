@@ -12,11 +12,24 @@ model = pickle.load(open("model1.pkl", "rb"))
 def home():
     return render_template('home.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')        
+
 
 @app.route('/predict', methods = ['POST'])
 def predict():
-    data = [float(x) for x in request.form.values()]
-    final_output = np.array(data).reshape(1, -1)
+    data = [x for x in request.form.values()]
+    data.pop(0)
+    data.pop(4)
+    data.pop(7)
+    data1 = [float(x) for x in data]
+
+    final_output = np.array(data1).reshape(1, -1)
     print(final_output)
     output = model.predict(final_output)[0]
     return render_template("home.html", prediction_text = "College : {} ,  Degree : {} , Course : {}".format(output[0], output[1], output[2]), prediction = "Thank you, Hope this will match your requirement !!!")
