@@ -18,7 +18,15 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')        
+    return render_template('contact.html')  
+
+@app.route('/technology')
+def technology():
+    return render_template('Technology.html')     
+
+@app.route('/learn')
+def learn():
+    return render_template('Coding.html')                  
 
 
 @app.route('/predict', methods = ['POST'])

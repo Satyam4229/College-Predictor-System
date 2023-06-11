@@ -69,21 +69,21 @@
                 <li>
                   <a
                     class="dropdown-item d-flex align-items-center gap-2 py-2"
-                    href="technology.html"
+                    href="/learn"
                     ><span
-                      class="d-inline-block bg-danger rounded-circle p-1"
+                      class="d-inline-block bg-primary rounded-circle p-1"
                     ></span>
-                    Technology</a
+                    Learn Coding</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item d-flex align-items-center gap-2 py-2"
-                    href="Coding_Skills.html"
+                    href="/technology"
                     ><span
-                      class="d-inline-block bg-primary rounded-circle p-1"
+                      class="d-inline-block bg-danger rounded-circle p-1"
                     ></span>
-                    Coding Skills</a
+                    Technology</a
                   >
                 </li>
                 <li>
@@ -251,60 +251,46 @@
                     >
                       College Predictor System Software
                     </h3>
-              
-                    <p
-                      class="pt-3"
-                      style="color: rgb(0, 115, 247); font-weight: 500;"
-                    >
-                      <span style="color: rgb(238, 19, 19); font-weight: 700">Quota : </span>
-                      All-India - 0, Home-State - 3, Other-State - 6, Andhra Pradesh - 1, Goa
-                      - 2, Jammu & Kashmir - 4, Ladakh - 5
-                    </p>
-                    <p style="color: rgb(0, 115, 247); font-weight: 500;">
-                      <span style="color: rgb(238, 19, 19); font-weight: 700"
-                        >Category :
-                      </span>
-                      General - 0, Other Backward Classes-Non Creamy Layer - 4, Scheduled
-                      Castes - 6, Scheduled Tribes - 8, General & Persons with Disabilities -
-                      3, Other Backward Classes & Persons with Disabilities - 5, Scheduled
-                      Castes & Persons with Disabilities - 7, Scheduled Tribes & Persons with
-                      Disabilities - 9, General & Economically Weaker Section - 1, General &
-                      Economically Weaker Section & Persons with Disability - 2
-                    </p>
-                    <div class="container text-center text-center pt-3">
-                      <form action="{{url_for('predict')}}" method="POST" style="background-color: rgb(169, 236, 106);  box-shadow: 0  0 1rem  #bbb8b8; border-radius: 8px;">
+                    <div class="container text-center text-center pt-4">
+                      <form  method="POST" name="google" style="background-color: rgb(0, 115, 247);  box-shadow: 0  0 1rem  #bbb8b8; border-radius: 8px;">
                         <div class="row ms-2 me-2">
                           <div class="col">
                             <input
-                              class="form-control form-control-sm mt-3"
+                              class="form-control mt-3"
                               type="text"
                               name="Name"
                               placeholder="Type your name"
                               required="required"
                             />
+                            <select class="form-select mt-3" aria-label="Default select example" name="Institute">
+                              <option>Choose your Institute</option>
+                              <option value="0">IIT</option>
+                              <option value="1">NIT</option>
+                            </select>
+                            <select class="form-select mt-3" aria-label="Default select example" name="Quota">
+                              <option selected>Select your Quota</option>
+                              <option value="0">All-India</option>
+                              <option value="3">Home-State</option>
+                              <option value="1">Andhra Pradesh</option>
+                              <option value="2">Goa</option>
+                              <option value="4">Jammu & Kashmir</option>
+                              <option value="5">Ladakh</option>
+                            </select>
+                            <select class="form-select mt-3" aria-label="Default select example" name="Category">
+                              <option selected>Select your Category</option>
+                              <option value="0">General</option>
+                              <option value="4">Other Backward Classes-Non Creamy Layer</option>
+                              <option value="6">Scheduled Castes</option>
+                              <option value="8">Scheduled Tribes</option>
+                              <option value="3">General & Persons with Disabilities</option>
+                              <option value="5">Other Backward Classes & Persons with Disabilities</option>
+                              <option value="7">Scheduled Castes & Persons with Disabilities</option>
+                              <option value="9">Scheduled Tribes & Persons with Disabilities</option>
+                              <option value="1">General & Economically Weaker Section</option>
+                              <option value="2">General & Economically Weaker Section & Persons with Disability</option>
+                            </select>
                             <input
-                              class="form-control form-control-sm mt-3"
-                              type="text"
-                              name="Institute"
-                              placeholder="Type of Institute : IIT - 0,  NIT - 1"
-                              required="required"
-                            />
-                            <input
-                              class="form-control form-control-sm mt-3"
-                              type="text"
-                              name="Quota"
-                              placeholder="Quota"
-                              required="required"
-                            />
-                            <input
-                              class="form-control form-control-sm mt-3"
-                              type="text"
-                              name="Category"
-                              placeholder="Category"
-                              required="required"
-                            />
-                            <input
-                              class="form-control form-control-sm mt-3"
+                              class="form-control mt-3"
                               type="text"
                               name="Closing"
                               placeholder="Your Closing jee score"
@@ -313,35 +299,36 @@
                           </div>
                           <div class="col">
                             <input
-                              class="form-control form-control-sm mt-3"
+                              class="form-control mt-3"
                               type="text"
                               name="School"
                               placeholder="Your school name"
                               required="required"
                             />
+                            <select class="form-select mt-3" aria-label="Default select example" name="Round">
+                              <option selected>Preferred Round Number</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                              <option value="4">Four</option>
+                              <option value="5">Five</option>
+                              <option value="6">Six</option>
+                              <option value="7">Seven</option>
+                            </select>
+                            <select class="form-select mt-3" aria-label="Default select example" name="Pool">
+                              <option selected>Choose Your Gender</option>
+                              <option value="0">Neutral</option>
+                              <option value="1">Female Only</option>
+                            </select>
                             <input
-                              class="form-control form-control-sm mt-3"
-                              type="text"
-                              name="Round"
-                              placeholder="Round number : 1, 2, 6, 7"
-                              required="required"
-                            />
-                            <input
-                              class="form-control form-control-sm mt-3"
-                              type="text"
-                              name="Pool"
-                              placeholder="Gender-Neutral : 0, Female-only : 1"
-                              required="required"
-                            />
-                            <input
-                              class="form-control form-control-sm mt-3"
+                              class="form-control mt-3"
                               type="text"
                               name="Opening"
                               placeholder="Your opening jee score"
                               required="required"
                             />
                             <input
-                              class="form-control form-control-sm mt-3"
+                              class="form-control mt-3"
                               type="text"
                               name="Opinion"
                               placeholder="Would you like our website"
@@ -349,13 +336,13 @@
                             />
                           </div>
                         </div>
-                        <button
+                        <input
                           type="submit"
-                          style="font-weight: 700; "
-                          class="btn mt-4 mb-3 btn-primary"
-                        >
-                          Tap to Predict
-                        </button>
+                          name="submit"
+                          style="font-weight: 700;"
+                          class="btn mt-4 mb-3 btn-warning btn-submit"
+                          value="login"
+                        />
                       </form>
                       <br />
                       <br />
@@ -429,12 +416,23 @@
   </footer>
 </div>
 
-    
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwsgn1nKu2mgE-T8oGbp88ZA_sl4rIGV3JHli8S07YTAe9lps-Y4LTtXeaqsgA5ihVE/exec';
+      const form = document.forms['google']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting"))
+        .catch(error => console.error('error', error.message))
+      })
+      </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>
