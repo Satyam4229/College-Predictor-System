@@ -60,10 +60,9 @@ First, we analyze the data of the different colleges and their stat for admissio
     1. Flask
     2. numpy
     3. pandas
-    4. sklearn
-    5. scikit-learn
-    6. matplotlib
-    7. gunicorn
+    4. scikit-learn
+    5. matplotlib
+    6. gunicorn
 
     ```text
     pip install -r requirements.txt
