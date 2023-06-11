@@ -246,13 +246,13 @@
                 <hr>
                 <div class="container">
                     <h3
-                      class="text-center mt-3"
-                      style="ffont-family: Verdana"
+                      class="text-center mt-4"
+                      style="font-family: Verdana; font-weight: 550;"
                     >
                       College Predictor System Software
                     </h3>
                     <div class="container text-center text-center pt-4">
-                      <form  method="POST" name="google" style="background-color: rgb(0, 115, 247);  box-shadow: 0  0 1rem  #bbb8b8; border-radius: 8px;">
+                      <form action="{{ url_for('predict')}}" method="POST" style="background-color: rgb(0, 115, 247);  box-shadow: 0  0.5rem 1rem 0 #272727; border-radius: 8px;">
                         <div class="row ms-2 me-2">
                           <div class="col">
                             <input
@@ -338,8 +338,7 @@
                         </div>
                         <button
                           type="submit"
-                          name="submit"
-                          style="font-weight: 700;"
+                          style="font-weight: 700; box-shadow: 0  0 0.5rem 0 #30302f; border-radius: 8px;"
                           class="btn mt-4 mb-3 btn-warning"
                         >Tap To Predict</button>
                       </form>
