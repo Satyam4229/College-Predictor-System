@@ -252,7 +252,7 @@
                       College Predictor System Software
                     </h3>
                     <div class="container text-center text-center pt-4">
-                      <form action="{{ url_for('predict')}}" method="POST" style="background-color: rgb(0, 115, 247);  box-shadow: 0  0.5rem 1rem 0 #272727; border-radius: 8px;">
+                      <form action="{{url_for('predict')}}" method="POST" style="background-color: rgb(0, 115, 247);  box-shadow: 0  0.5rem 1rem 0 #272727; border-radius: 8px;">
                         <div class="row ms-2 me-2">
                           <div class="col">
                             <input
@@ -262,20 +262,13 @@
                               placeholder="Type your name"
                               required="required"
                             />
-                            <select class="form-select mt-3" aria-label="Default select example" name="Institute">
-                              <option>Choose your Institute</option>
-                              <option value="0">IIT</option>
-                              <option value="1">NIT</option>
-                            </select>
-                            <select class="form-select mt-3" aria-label="Default select example" name="Quota">
-                              <option selected>Select your Quota</option>
-                              <option value="0">All-India</option>
-                              <option value="3">Home-State</option>
-                              <option value="1">Andhra Pradesh</option>
-                              <option value="2">Goa</option>
-                              <option value="4">Jammu & Kashmir</option>
-                              <option value="5">Ladakh</option>
-                            </select>
+                            <input
+                              class="form-control mt-3"
+                              type="text"
+                              name="School"
+                              placeholder="Your school name"
+                              required="required"
+                            />
                             <select class="form-select mt-3" aria-label="Default select example" name="Category">
                               <option selected>Select your Category</option>
                               <option value="0">General</option>
@@ -289,22 +282,27 @@
                               <option value="1">General & Economically Weaker Section</option>
                               <option value="2">General & Economically Weaker Section & Persons with Disability</option>
                             </select>
-                            <input
-                              class="form-control mt-3"
-                              type="text"
-                              name="Closing"
-                              placeholder="Your Closing jee score"
-                              required="required"
-                            />
+                            <select class="form-select mt-3" aria-label="Default select example" name="Quota">
+                              <option selected>Select your Quota</option>
+                              <option value="0">All-India</option>
+                              <option value="3">Home-State</option>
+                              <option value="1">Andhra Pradesh</option>
+                              <option value="2">Goa</option>
+                              <option value="4">Jammu & Kashmir</option>
+                              <option value="5">Ladakh</option>
+                            </select>
+                            <select class="form-select mt-3" aria-label="Default select example" name="Pool">
+                              <option selected>Choose Your Gender</option>
+                              <option value="0">Neutral</option>
+                              <option value="1">Female Only</option>
+                            </select>
                           </div>
                           <div class="col">
-                            <input
-                              class="form-control mt-3"
-                              type="text"
-                              name="School"
-                              placeholder="Your school name"
-                              required="required"
-                            />
+                            <select class="form-select mt-3" aria-label="Default select example" name="Institute">
+                              <option>Choose your Institute</option>
+                              <option value="0">IIT</option>
+                              <option value="1">NIT</option>
+                            </select>
                             <select class="form-select mt-3" aria-label="Default select example" name="Round">
                               <option selected>Preferred Round Number</option>
                               <option value="1">One</option>
@@ -315,16 +313,18 @@
                               <option value="6">Six</option>
                               <option value="7">Seven</option>
                             </select>
-                            <select class="form-select mt-3" aria-label="Default select example" name="Pool">
-                              <option selected>Choose Your Gender</option>
-                              <option value="0">Neutral</option>
-                              <option value="1">Female Only</option>
-                            </select>
                             <input
                               class="form-control mt-3"
                               type="text"
                               name="Opening"
                               placeholder="Your opening jee score"
+                              required="required"
+                            />
+                            <input
+                              class="form-control mt-3"
+                              type="text"
+                              name="Closing"
+                              placeholder="Your Closing jee score"
                               required="required"
                             />
                             <input
@@ -340,7 +340,7 @@
                           type="submit"
                           style="font-weight: 700; box-shadow: 0  0 0.5rem 0 #30302f; border-radius: 8px;"
                           class="btn mt-4 mb-3 btn-warning"
-                        >Tap To Predict</button>
+                        >Tap To Predict College</button>
                       </form>
                       <br />
                       <br />
@@ -414,23 +414,25 @@
   </footer>
 </div>
 
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwsgn1nKu2mgE-T8oGbp88ZA_sl4rIGV3JHli8S07YTAe9lps-Y4LTtXeaqsgA5ihVE/exec';
-      const form = document.forms['google']
-
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Contacting"))
-        .catch(error => console.error('error', error.message))
-      })
-      </script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
+
+  <script>
+    function prediction() {
+      document.forms['pred'].action = '/predict';
+      document.forms['pred'].submit();
+    }
+
+    let url = 'https://script.google.com/macros/s/AKfycbySarWwG_HxbcnKeYtcU88PCafsIjwP9qvl4E1QghTBiQ6S6-5yG3ReCKY2WGlrubjVUQ/exec';
+    let form = document.querySelector('#form');
+    form.addEventListener("submit", (e) => {
+      let d = new FormData(form);
+      fetch(url,{
+        method:"POST",
+        body:d
+      }).then((res)=>res.text())
+      .then((finalres)=>console.log(final.res))
+      e.preventDefault();
+    })
+    </script>
+
 </html>
