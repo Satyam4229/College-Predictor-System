@@ -44,7 +44,7 @@ def predict():
 
     Institute = {'0':'IIT', '1':'NIT'}
 
-    sa = gspread.service_account(filename="college.json")
+    sa = gspread.service_account(filename="College.json")
     sh = sa.open("College Data")
     wks = sh.worksheet("Sheet1")
 
