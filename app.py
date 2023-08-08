@@ -44,37 +44,30 @@ def predict():
 
     Institute = {'0':'IIT', '1':'NIT'}
 
-    sa = gspread.service_account(filename="college.json")
+    sa = gspread.service_account(filename="College.json")
     sh = sa.open("College Data")
     wks = sh.worksheet("Sheet1")
 
     data = [x for x in request.form.values()]
-    print(data)
     
     list1 = data.copy()
-    print(list1)
 
     list1[2] = Category.get(list1[2])
     list1[3] = Quota.get(list1[3])
     list1[4] = Pool.get(list1[4])
     list1[5] = Institute.get(list1[5])
-    print(list1)
 
     data.pop(0)
     data.pop(0)
     data.pop(7)
-    print(data)
     data1 = [float(x) for x in data]
 
     final_output = np.array(data1).reshape(1, -1)
-    print(final_output)
     output = model.predict(final_output)[0]
-    print(output)
 
     list1.append(output[0])
     list1.append(output[1])
     list1.append(output[2])
-    print(list1)
     wks.append_row(list1, table_range="A2:M2")
 
     return render_template("home.html", prediction_text = "College : {} ,  Degree : {} , Course : {}".format(output[0], output[1], output[2]), prediction = "Thank you, Hope this will match your requirement !!!")
