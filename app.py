@@ -21,9 +21,9 @@ def about():
 def contact():
     return render_template('contact.html')  
 
-@app.route('/technology')
-def technology():
-    return render_template('Technology.html')     
+@app.route('/colleges')
+def colleges():
+    return render_template('Top Colleges.html')     
 
 @app.route('/learn')
 def learn():
