@@ -27,7 +27,15 @@ def colleges():
 
 @app.route('/learn')
 def learn():
-    return render_template('Coding.html')                  
+    return render_template('Coding.html')     
+
+@app.route('/support')
+def support():
+    return render_template('support.html')   
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')              
 
 
 @app.route('/predict', methods = ['POST'])
