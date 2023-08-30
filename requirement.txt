@@ -1,7 +1,7 @@
 Flask
 numpy
 pandas
-scikit-learn==0.24.2
+scikit-learn
 matplotlib
 gspread
 gunicorn
